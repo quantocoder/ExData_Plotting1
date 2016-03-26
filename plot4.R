@@ -1,7 +1,9 @@
 
 rm(list=ls())
 
-D = read.csv("subset.txt", sep=";", header = FALSE)
+## please, note that subset.txt is created by 'subsetData.R'
+
+D = read.csv("subset.txt", sep=";", header = FALSE, na.strings = "?", stringsAsFactor = FALSE)
 
 t = strptime(paste(D[,1],D[,2]), "%m/%d/%Y %H:%M:%S", tz = "PDT")
 
@@ -13,15 +15,15 @@ png(filename = "plot4.png", width = 480, height = 480)
 
 par(mfrow=c(2,2))
 
-# 1
+## 1
 
 plot (df$Time,df$Active, t = 'l',  xlab= "", ylab = "Global ActivePower")
 
-# 2
+## 2
 
 plot (df$Time,df$Voltage, t = 'l',  xlab= "datetime", ylab = "Voltage")
 
-# 3
+## 3
 
 plot (df$Time,
       df$Sub1, 
@@ -40,7 +42,7 @@ legend("topright",
        lwd = c(1,1,1))
 
 
-# 4
+## 4
 plot (df$Time,df$Reactive, t = 'l',  xlab= "datetime", ylab = "Global_reactive_power")
 
 dev.off()

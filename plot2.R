@@ -1,7 +1,9 @@
 
 rm(list=ls())
 
-D = read.csv("subset.txt", sep=";", header = FALSE)
+## please, note that subset.txt is created by 'subsetData.R'
+
+D = read.csv("subset.txt", sep=";", header = FALSE, na.strings = "?", stringsAsFactor = FALSE)
 
 t = strptime(paste(D[,1],D[,2]), "%m/%d/%Y %H:%M:%S", tz = "PDT")
 
