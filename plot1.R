@@ -1,7 +1,7 @@
 
 rm(list=ls())
 
-D = read.csv("subset.txt", sep=";")
+D = read.csv("subset.txt", sep=";", na.strings = "?", stringsAsFactor = FALSE)
 
 t = strptime(paste(D[,1],D[,2]), "%m/%d/%Y %H:%M:%S", tz = "PDT")
 
