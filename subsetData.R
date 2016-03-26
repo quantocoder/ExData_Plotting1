@@ -5,4 +5,4 @@ download.file(url,"household_power_consumption.zip")
 
 system("unzip -u household_power_consumption.zip")
 
-system ("grep '^\\(2/1/2007\\|2/2/2007\\)' household_power_consumption.txt  > subset.txt")
+system ("grep '^\\(1/2/2007\\|2/2/2007\\)' household_power_consumption.txt  > subset.txt")
